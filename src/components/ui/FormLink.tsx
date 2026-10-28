@@ -1,5 +1,7 @@
-import Link from "next/link";
+"use client";
+
 import { APPLY_FORM_URL, PARTNER_FORM_URL } from "@/config/site";
+import { showToast } from "@/components/ui/Toast";
 
 interface FormLinkProps {
   kind: "apply" | "partner";
@@ -7,7 +9,8 @@ interface FormLinkProps {
   children: React.ReactNode;
 }
 
-// 신청/입점 신청 폼으로 이동한다. 외부 폼 주소가 설정되지 않으면 /contact 로 안내한다.
+// 신청/입점 신청 폼으로 이동한다.
+// 외부 폼 주소(.env)가 아직 없으면 이동하지 않고 "준비 중입니다." 안내만 띄운다.
 export function FormLink({ kind, className, children }: FormLinkProps) {
   const url = kind === "apply" ? APPLY_FORM_URL : PARTNER_FORM_URL;
 
@@ -19,8 +22,8 @@ export function FormLink({ kind, className, children }: FormLinkProps) {
     );
   }
   return (
-    <Link href="/contact" className={className}>
+    <button type="button" className={className} onClick={() => showToast("준비 중입니다.")}>
       {children}
-    </Link>
+    </button>
   );
 }

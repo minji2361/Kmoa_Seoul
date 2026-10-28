@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ScrollTopButton } from "@/components/layout/ScrollTopButton";
+import { ToastHost } from "@/components/ui/Toast";
 
 export const metadata: Metadata = {
   title: {
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="content">{children}</main>
         <Footer />
         <ScrollTopButton />
+        <ToastHost />
       </body>
     </html>
   );
