@@ -1,0 +1,18 @@
+/*
+ * 사이트 전역 폰트 설정 — 폰트를 바꿀 때는 이 파일만 수정한다.
+ * (페이지·컴포넌트에서 font-family 를 직접 지정하지 말고 Tailwind 의 font-sans / font-serif 를 사용한다.)
+ *
+ * 현재 폰트: Pretendard Variable (SIL Open Font License 1.1 — 상업적 이용·웹폰트 임베딩 허용)
+ * 공식 출처: https://github.com/orioncactus/pretendard
+ * 라이선스 사본: /licenses/Pretendard-OFL-1.1.txt
+ *
+ * dynamic-subset 은 글자 범위별로 쪼갠 woff2 를 필요한 만큼만 내려받는다 (font-display: swap).
+ */
+@import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+
+:root {
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Segoe UI", "Malgun Gothic", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif; /* 인용부호(“) 장식용 */
+}
