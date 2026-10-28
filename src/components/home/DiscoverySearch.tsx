@@ -42,7 +42,7 @@ export function DiscoverySearch() {
             aria-label="언어 선택"
             value={lang}
             onChange={(e) => setLang(e.target.value)}
-            className="min-h-11 flex-1 bg-transparent px-2 type-caption text-[#727279] outline-none md:w-[110px] md:flex-none"
+            className="min-h-11 flex-1 bg-transparent px-2 type-caption text-mute outline-none md:w-[8em] md:flex-none"
           >
             <option value="">모든 언어</option>
             {LANGS.map((l) => (

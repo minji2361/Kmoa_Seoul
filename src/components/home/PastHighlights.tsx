@@ -38,7 +38,7 @@ export function PastHighlights() {
         <div className="grid grid-cols-3 gap-2.5 lg:grid-cols-6 lg:gap-6">
           {PAST.map((p) => (
             <div key={p.label} className="relative opacity-70">
-              <span className="absolute left-2 top-2 z-10 rounded bg-white/70 px-1.5 py-0.5 type-micro text-[#68686e] backdrop-blur-sm">
+              <span className="absolute left-2 top-2 z-10 rounded bg-white/70 px-1.5 py-0.5 type-micro text-mute backdrop-blur-sm">
                 종료 · 예시
               </span>
               <Tile

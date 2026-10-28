@@ -19,6 +19,7 @@ const typography = plugin(({ addComponents, theme }) => {
       fontWeight: String(role.weight),
     };
     if (role.uppercase) rule.textTransform = "uppercase";
+    if (role.wrap) rule.textWrap = role.wrap;
     if (s1 !== s0) rule[`@media (min-width: ${md})`] = { fontSize: scaled(s1) };
     if (s2 !== s1) rule[`@media (min-width: ${lg})`] = { fontSize: scaled(s2) };
     components[`.type-${name}`] = rule;
@@ -32,7 +33,10 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#1d1d1f",
-        mute: "#86868b",
+        mute: "#6e6e73", // 밝은 배경 위 보조 텍스트 (흰색 5.1:1, #f5f5f7 4.7:1)
+        "mute-strong": "#5c5c62", // 옅은 회색 칩·아바타 위 텍스트 (#f1f1f3 5.9:1, #dedee3 5.0:1)
+        faint: "#8a8a90", // 큰 장식용 글자 전용 (흰색 3.4:1) — 일반 텍스트에는 쓰지 않는다
+        "mute-dark": "#9f9fa7", // 어두운 배경 위 보조 텍스트 (#1d1d1f 6.4:1)
         line: "#e6e6e8",
         soft: "#f5f5f7",
         night: "#080809",

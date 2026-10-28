@@ -70,7 +70,7 @@ export function Hero() {
               <ellipse cx="552" cy="194" rx="157" ry="124" transform="rotate(-27 552 194)" />
             </g>
           </svg>
-          <div className="-mt-2 flex justify-between px-[18px] type-label font-normal text-[#67676d] md:px-[70px]">
+          <div className="-mt-2 flex justify-between px-[18px] type-label font-normal text-mute-dark md:px-[70px]">
             <span>DIFFERENT CULTURES.</span>
             <span>ONE CONNECTION.</span>
           </div>

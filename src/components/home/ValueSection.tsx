@@ -30,14 +30,14 @@ export function ValueSection() {
           {VALUES.map((v) => (
             <article
               key={v.title}
-              className="grid grid-cols-[30px_minmax(0,1fr)] gap-[18px] border-t border-[#d4d4d8] py-6 md:block md:px-[26px] md:py-8"
+              className="grid grid-cols-[2em_minmax(0,1fr)] gap-[18px] border-t border-[#d4d4d8] py-6 md:block md:px-[26px] md:py-8"
             >
-              <div aria-hidden className="type-glyph-lg text-[#66666e] md:mb-[26px]">
+              <div aria-hidden className="type-glyph-lg text-mute md:mb-[26px]">
                 {v.icon}
               </div>
               <div>
                 <h3 className="type-subheading">{v.title}</h3>
-                <p className="mt-2 type-body-sm text-mute md:max-w-[300px]">{v.text}</p>
+                <p className="mt-2 type-body-sm text-mute md:max-w-[22em]">{v.text}</p>
               </div>
             </article>
           ))}

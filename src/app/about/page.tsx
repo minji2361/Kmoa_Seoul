@@ -41,13 +41,13 @@ export default function AboutPage() {
       <section className="section">
         <div className="wrap">
           <div className="eyebrow mb-5">BRAND STORY</div>
-          <div className="max-w-[820px] type-story">
+          <div className="max-w-[39em] type-story">
             <h2 className="type-heading">왜 K-MOA일까요?</h2>
-            <p className="my-6 text-[#8d8d93]">
+            <p className="my-6 text-mute">
               길거리에서 우연히 만난 낯선 모임, 목적이 불분명한 1회성 매칭, 어색하고 경계심만 남았던
               기존의 교류 방식에 지치지 않으셨나요?
             </p>
-            <p className="my-6 text-[#8d8d93]">
+            <p className="my-6 text-mute">
               K-MOA는 “어떻게 하면 내·외국인이 서로 경계심을 허물고, 안전하며 깊이 있는 관계를 맺을
               수 있을까?”라는 질문에서 출발했습니다.
             </p>
@@ -94,7 +94,7 @@ export default function AboutPage() {
           <div className="grid gap-4 md:grid-cols-3 md:gap-6">
             {MISSIONS.map((m, i) => (
               <article key={m.title} className="rounded-[20px] bg-white p-[25px] md:p-8">
-                <strong className="mb-6 block type-numeral text-[#b6b6bd]">0{i + 1}</strong>
+                <strong className="mb-6 block type-numeral text-faint">0{i + 1}</strong>
                 <h3 className="type-subheading font-medium">{m.title}</h3>
                 <p className="mt-3 type-body-sm text-mute">{m.text}</p>
               </article>
@@ -107,13 +107,13 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="grid gap-10 md:grid-cols-2 md:gap-12">
             <div>
-              <div className="eyebrow mb-5 text-[#83838b]">TRUST & SAFETY</div>
+              <div className="eyebrow mb-5 text-mute-dark">TRUST & SAFETY</div>
               <h2 className="type-heading">
                 안심하고 활동에만
                 <br />
                 집중할 수 있도록
               </h2>
-              <p className="mt-[18px] text-[#929299]">
+              <p className="mt-[18px] text-mute-dark">
                 투명하고 체계적인 운영 가이드라인을 지향합니다.
               </p>
             </div>
@@ -121,7 +121,7 @@ export default function AboutPage() {
               {FAQS.slice(1, 4).map((f, i) => (
                 <article key={f.q} className="border-b border-[#313136] py-6">
                   <h3 className="mb-1.5 type-subheading font-medium">{SAFETY_TITLES[i]}</h3>
-                  <p className="type-body-sm text-[#929299]">{f.a}</p>
+                  <p className="type-body-sm text-mute-dark">{f.a}</p>
                 </article>
               ))}
             </div>

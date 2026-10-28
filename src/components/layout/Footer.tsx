@@ -53,7 +53,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-9 flex flex-col gap-2 border-t border-[#d9d9df] pt-5 type-micro text-[#99999f] md:flex-row md:justify-between">
+        <div className="mt-9 flex flex-col gap-2 border-t border-[#d9d9df] pt-5 type-micro text-mute md:flex-row md:justify-between">
           <span>상호 K-MOA · 사업자 정보는 운영 정보 확정 후 입력</span>
           <span>© 2026 K-MOA. All rights reserved.</span>
         </div>

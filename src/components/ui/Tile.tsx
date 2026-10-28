@@ -5,7 +5,7 @@ const TONES: Record<TileTone, string> = {
   dark: "bg-[#1c1c20] text-[#e9e9ed]",
   blue: "bg-[#dcdce2] text-[#303035]",
   teal: "bg-[#343439] text-[#efeff1]",
-  purple: "bg-[#b0b0ba] text-white",
+  purple: "bg-[#b0b0ba] text-ink",
   gold: "bg-[#d3cfc7] text-[#363430]",
   pink: "bg-[#bdbbb9] text-[#343332]",
 };
