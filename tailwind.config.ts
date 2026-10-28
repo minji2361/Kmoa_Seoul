@@ -12,15 +12,10 @@ const config: Config = {
         night: "#080809",
         dusk: "#111113",
       },
+      // 폰트 정의는 src/styles/fonts.css 의 CSS 변수에서 일괄 관리한다.
       fontFamily: {
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Helvetica Neue",
-          "Segoe UI",
-          "Malgun Gothic",
-          "sans-serif",
-        ],
+        sans: ["var(--font-sans)"],
+        serif: ["var(--font-serif)"],
       },
     },
   },

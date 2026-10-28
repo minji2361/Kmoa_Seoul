@@ -69,6 +69,17 @@ K-MOA는 모바일·태블릿·PC(노트북/데스크탑) 모두에서 사용하
 - Chrome, Edge, Safari 및 모바일 브라우저 호환성을 고려한다 (예: iOS Safari의 `100vh` 이슈는 `dvh` 등으로 대응).
 - 개발 완료 후 모바일·태블릿·PC 화면 크기별로 레이아웃을 검증하고, 결과를 작업 보고에 포함한다.
 
+## 폰트 적용 규칙 (필수)
+
+폰트는 추후 변경될 수 있으므로 초기에는 상업적 이용이 가능한 무료 폰트를 쓰고, **한 곳에서 일괄 관리**한다.
+
+- **현재 폰트**: Pretendard Variable — SIL Open Font License 1.1(개인·상업적 이용, 웹폰트 임베딩 허용). 출처: https://github.com/orioncactus/pretendard, npm 패키지 `pretendard`. 라이선스 사본: `public/licenses/Pretendard-OFL-1.1.txt`.
+- **선정 이유**: 한글·영문을 모두 지원하고, 제공된 UI(HTML)의 시스템 산세리프(`-apple-system`, `Helvetica Neue`, `Malgun Gothic`) 인상과 가장 가까우며, OS와 기기에 관계없이 같은 모양으로 표시된다.
+- **성능**: `dynamic-subset`(글자 범위별 woff2를 필요한 만큼만 로드, `font-display: swap`)을 사용한다.
+- **관리 위치**: `src/styles/fonts.css`(폰트 import와 `--font-sans`, `--font-serif` 변수)와 `tailwind.config.ts`의 `fontFamily`. **폰트를 바꿀 때는 이 두 파일만 수정한다.**
+- **금지**: 페이지·컴포넌트에서 `font-family`를 직접 지정하거나 `font-[...]` 임의 값으로 폰트를 하드코딩하지 않는다. Tailwind `font-sans`/`font-serif`만 사용한다.
+- **새 폰트를 도입할 때**: 상업적 이용 가능 여부와 라이선스를 공식 출처에서 확인하고(불명확하면 사용 금지), 라이선스 사본을 `public/licenses/`에 두며, 폰트명·선정 이유·라이선스·공식 출처를 보고한다. UI(HTML)에 폰트가 지정돼 있으면 먼저 검토하되 라이선스가 불명확하거나 상업적 이용이 불가하면 대체한다.
+
 ## Supabase / SQL 보안 규칙
 
 - 마이그레이션 SQL(`supabase/migrations/`)은 스키마 정의(테이블, 인덱스, RLS 정책, 함수)만 담고 Git에 올려도 된다.
