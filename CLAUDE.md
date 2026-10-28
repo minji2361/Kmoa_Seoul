@@ -21,7 +21,11 @@ K-MOA 신규 웹사이트 프로젝트. Genie_Seoul(참고용)과 무관한 **�
 
 ## 현재 단계
 
-공통 개발 규칙과 프로젝트 골격(빈 레이아웃/페이지)만 구성된 상태. UI(HTML)와 기획서가 제공되기 전에는 **기능 개발을 시작하지 않는다.**
+UI(HTML)와 기획서가 제공되어 개발 진행 중. 기준 자료는 `docs/reference/K-MOA-ui.html`(UI)과 `docs/reference/K-MOA-plan.docx`(기획서)다.
+
+- 완료: 공통 레이아웃(헤더·푸터), Home. 남은 페이지: About, Programs, Category, Reviews, Contact/FAQ.
+- 신청/입점 신청은 **외부 폼 링크**로 연결한다 (`NEXT_PUBLIC_APPLY_FORM_URL`, `NEXT_PUBLIC_PARTNER_FORM_URL`, `src/components/ui/FormLink.tsx`). 자체 폼 전환에 대비한 스키마는 `supabase/migrations/20261028000001_create_application_forms.sql`에 준비돼 있으며 **아직 DB에 적용하지 않았다.**
+- 프로그램·후기 데이터는 `src/data/`의 예시 데이터를 쓴다. 운영 데이터 확정 후 Supabase로 이전한다.
 
 ## 필수 규칙
 
