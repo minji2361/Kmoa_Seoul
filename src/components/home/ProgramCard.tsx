@@ -13,13 +13,13 @@ export function ProgramCard({ program: p }: { program: Program }) {
       <Tile
         label={p.visual}
         tone={p.tone}
-        className="h-full min-h-[191px] p-3 text-[15px] tracking-[-0.6px] md:h-[235px] md:p-6 md:text-[26px] lg:h-[215px]"
+        className="h-full min-h-[191px] p-3 type-tile md:h-[235px] md:p-6 lg:h-[215px]"
       />
       <div className="p-4 md:p-[22px]">
-        <div className="mb-2 text-[10px] text-mute">
+        <div className="mb-2 type-caption text-mute">
           {formatProgramDate(p.date)} · {p.time}
         </div>
-        <h3 className="mb-2 text-sm font-semibold leading-[1.45] tracking-[-0.4px] md:text-base lg:min-h-[49px]">
+        <h3 className="mb-2 type-card-title lg:min-h-[49px]">
           <ModalTrigger
             label={p.title}
             title={p.title}
@@ -28,7 +28,7 @@ export function ProgramCard({ program: p }: { program: Program }) {
             <ProgramDetail program={p} />
           </ModalTrigger>
         </h3>
-        <div className="mb-2 text-[10px] leading-[1.7] text-[#96969c]">
+        <div className="mb-2 type-caption text-[#96969c]">
           ⌖ {p.place} · {p.langs.join(" / ")}
         </div>
         <div className="flex flex-wrap gap-1">
@@ -36,7 +36,7 @@ export function ProgramCard({ program: p }: { program: Program }) {
           <Tag>{p.type}</Tag>
         </div>
         <div className="mt-4 flex items-center justify-between gap-1.5 border-t border-[#eeeef0] pt-3 md:mt-5 md:pt-4">
-          <small className="text-[10px] text-[#8c8c92]">{p.count}</small>
+          <small className="type-caption text-[#8c8c92]">{p.count}</small>
           <FormLink kind="apply" className="btn btn-sm shrink-0 px-3">
             바로 신청하기
           </FormLink>
@@ -52,7 +52,7 @@ function ProgramDetail({ program: p }: { program: Program }) {
       <Tile
         label={p.visual}
         tone={p.tone}
-        className="mb-5 h-[200px] rounded-[13px] p-6 text-[26px]"
+        className="mb-5 h-[200px] rounded-[13px] p-6 type-heading-md"
       />
       <div className="flex gap-1">
         <Tag>{p.category}</Tag>
@@ -63,7 +63,7 @@ function ProgramDetail({ program: p }: { program: Program }) {
         <strong>
           {formatProgramDate(p.date)} · {p.time}
         </strong>
-        <p className="mt-2 text-sm text-mute">
+        <p className="mt-2 type-body text-mute">
           ⌖ {p.place}
           <br />
           언어: {p.langs.join(" / ")}
@@ -71,13 +71,13 @@ function ProgramDetail({ program: p }: { program: Program }) {
           진행: {p.duration}
         </p>
       </div>
-      <h3 className="mt-6 text-xl font-semibold">함께할 활동</h3>
+      <h3 className="mt-6 type-subheading">함께할 활동</h3>
       <ul className="mt-2 list-disc pl-5">
         {p.activities.map((a) => (
           <li key={a}>{a}</li>
         ))}
       </ul>
-      <div className="my-5 rounded-[11px] bg-soft px-4 py-3 text-[11px] text-mute">
+      <div className="my-5 rounded-[11px] bg-soft px-4 py-3 type-caption text-mute">
         예시 프로그램입니다. 실제 일정·상세 장소·참가비·취소 및 환불 기준은 운영 정보 확정 후 안내가
         필요합니다.
       </div>

@@ -29,14 +29,14 @@ export function ModalTrigger({ label, title, triggerClassName, children }: Modal
       >
         <div>
           <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-[#eaeaef] bg-white px-[22px] py-[22px] md:px-7 md:py-6">
-            <h2 id={titleId} className="text-xl font-semibold tracking-[-0.6px] md:text-[22px]">
+            <h2 id={titleId} className="type-subheading">
               {title}
             </h2>
             <button
               type="button"
               aria-label="닫기"
               onClick={() => ref.current?.close()}
-              className="-mr-2 flex h-11 w-11 items-center justify-center text-[25px] font-light text-mute"
+              className="-mr-2 flex h-11 w-11 items-center justify-center type-glyph-lg font-light text-mute"
             >
               ×
             </button>

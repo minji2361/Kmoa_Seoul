@@ -15,4 +15,6 @@
     "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Segoe UI", "Malgun Gothic", sans-serif;
   --font-serif: Georgia, "Times New Roman", serif; /* 인용부호(“) 장식용 */
+  /* 모든 글자 크기에 곱해지는 보정 배율. 폰트를 바꿨을 때 전체가 크거나 작아 보이면 이 값만 조정한다. */
+  --font-scale: 1;
 }

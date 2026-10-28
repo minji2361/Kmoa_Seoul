@@ -12,7 +12,7 @@ export default function ReviewsPage() {
       <PageHead title="Reviews" description="문화로 이어진 만남, 참가자들의 이야기를 만나보세요." />
       <section className="section">
         <div className="wrap">
-          <div className="mb-6 rounded-[11px] bg-soft px-[15px] py-[13px] text-[10px] text-mute md:text-[11px]">
+          <div className="mb-6 rounded-[11px] bg-soft px-[15px] py-[13px] type-caption text-mute">
             아래 후기는 기획안에 수록된 예시입니다. 실제 운영 시 참가자 동의를 받은 후기와 사진으로
             교체해주세요.
           </div>

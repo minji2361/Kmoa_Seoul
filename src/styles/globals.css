@@ -16,7 +16,7 @@
   }
 
   body {
-    @apply bg-white font-sans text-[14px] leading-[1.7] tracking-[-0.025em] text-ink antialiased md:text-[15px];
+    @apply type-body bg-white font-sans text-ink antialiased;
   }
 
   :focus-visible {
@@ -34,7 +34,7 @@
   }
 
   .btn {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-ink bg-ink px-6 py-3 text-[13px] font-medium tracking-[-0.02em] text-white transition hover:bg-[#37373b];
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-ink bg-ink px-6 py-3 type-button text-white transition hover:bg-[#37373b];
   }
 
   .btn-outline {
@@ -46,10 +46,10 @@
   }
 
   .btn-sm {
-    @apply min-h-11 px-4 py-2 text-[11px] lg:min-h-[33px];
+    @apply type-button-sm min-h-11 px-4 py-2 lg:min-h-[33px];
   }
 
   .eyebrow {
-    @apply text-[10px] font-semibold uppercase tracking-[2.5px] text-mute;
+    @apply type-label text-mute;
   }
 }

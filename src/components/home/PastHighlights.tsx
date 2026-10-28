@@ -30,23 +30,21 @@ export function PastHighlights() {
               key={s.value}
               className="flex items-center gap-[18px] border-t border-[#d9d9df] pb-5 pt-4 md:pb-7 md:pt-5"
             >
-              <strong className="text-[43px] font-medium tracking-[-2px] md:text-[58px] md:tracking-[-3px]">
-                {s.value}
-              </strong>
-              <span className="text-[10px] text-mute md:text-[11px]">{s.label}</span>
+              <strong className="type-stat">{s.value}</strong>
+              <span className="type-caption text-mute">{s.label}</span>
             </div>
           ))}
         </div>
         <div className="grid grid-cols-3 gap-2.5 lg:grid-cols-6 lg:gap-6">
           {PAST.map((p) => (
             <div key={p.label} className="relative opacity-70">
-              <span className="absolute left-2 top-2 z-10 rounded bg-white/70 px-1.5 py-0.5 text-[8px] text-[#68686e] backdrop-blur-sm">
+              <span className="absolute left-2 top-2 z-10 rounded bg-white/70 px-1.5 py-0.5 type-micro text-[#68686e] backdrop-blur-sm">
                 종료 · 예시
               </span>
               <Tile
                 label={p.label}
                 tone={p.tone}
-                className="min-h-[100px] rounded-xl p-3 text-xs md:min-h-[135px] md:p-4 md:text-[17px]"
+                className="min-h-[100px] rounded-xl p-3 type-tile-sm md:min-h-[135px] md:p-4"
               />
             </div>
           ))}

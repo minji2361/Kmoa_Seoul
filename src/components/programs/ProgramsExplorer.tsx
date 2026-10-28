@@ -65,7 +65,7 @@ export function ProgramsExplorer({ programs }: { programs: Program[] }) {
             value={query}
             maxLength={100}
             onChange={(e) => setQuery(e.target.value)}
-            className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-xs outline-none"
+            className="min-h-11 min-w-0 flex-1 bg-transparent px-3 type-body-sm outline-none"
           />
           <button type="submit" className="btn btn-sm shrink-0 px-5">
             검색
@@ -74,7 +74,7 @@ export function ProgramsExplorer({ programs }: { programs: Program[] }) {
 
         {ROWS.map((row) => (
           <div key={row.key} className="my-5 md:flex md:items-center md:gap-7">
-            <strong className="mb-3 block w-[95px] shrink-0 text-[10px] font-medium text-[#8e8e95] md:mb-0 md:text-[11px]">
+            <strong className="mb-3 block w-[95px] shrink-0 type-caption font-medium text-[#8e8e95] md:mb-0">
               {row.label}
             </strong>
             <div className="flex flex-wrap gap-1.5 md:gap-2">
@@ -87,7 +87,7 @@ export function ProgramsExplorer({ programs }: { programs: Program[] }) {
                     aria-pressed={active}
                     onClick={() => setFilters((f) => ({ ...f, [row.key]: v }))}
                     className={cn(
-                      "min-h-11 min-w-11 rounded-full border px-3 text-[10px] transition hover:border-[#929298] lg:min-h-9 md:px-4 md:text-[11px]",
+                      "min-h-11 min-w-11 rounded-full border px-3 type-caption transition hover:border-[#929298] lg:min-h-9 md:px-4",
                       active
                         ? "border-ink bg-ink text-white hover:border-ink"
                         : "border-[#dcdce1] bg-transparent",
@@ -102,7 +102,7 @@ export function ProgramsExplorer({ programs }: { programs: Program[] }) {
         ))}
       </div>
 
-      <div className="my-6 flex items-center justify-between text-[10px] md:text-xs">
+      <div className="my-6 flex items-center justify-between type-caption">
         <strong aria-live="polite" className="font-medium">
           조건에 맞는 프로그램 {results.length}개
         </strong>
@@ -123,8 +123,8 @@ export function ProgramsExplorer({ programs }: { programs: Program[] }) {
         </div>
       ) : (
         <div className="rounded-[15px] border border-[#dfdfe3] bg-white p-[65px] text-center">
-          <h3 className="text-xl font-medium">조건에 맞는 모임이 없어요</h3>
-          <p className="mt-2 text-[13px] text-mute">검색어나 필터를 바꾸어 보세요.</p>
+          <h3 className="type-subheading font-medium">조건에 맞는 모임이 없어요</h3>
+          <p className="mt-2 type-body-sm text-mute">검색어나 필터를 바꾸어 보세요.</p>
           <button type="button" onClick={reset} className="btn btn-sm mt-4">
             필터 초기화
           </button>

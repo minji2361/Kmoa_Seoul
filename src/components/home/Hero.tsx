@@ -7,26 +7,26 @@ export function Hero() {
       <div className="wrap">
         <div className="mx-auto max-w-[800px] text-center">
           <div className="eyebrow mb-7 text-[#a2a2a8]">K-MOA · CULTURE MEETS LANGUAGE</div>
-          <h1 className="text-[clamp(64px,21vw,88px)] font-semibold leading-[0.95] tracking-[-4.5px] md:text-[116px] md:tracking-[-6px] lg:text-[clamp(116px,10.2vw,148px)] lg:leading-[0.93] lg:tracking-[-8px]">
+          <h1 className="type-display">
             Culture.
             <br />
             <span className="bg-gradient-to-b from-[#ededf0] to-[#88888f] bg-clip-text text-transparent">
               Closer.
             </span>
           </h1>
-          <p className="mx-auto my-6 text-base leading-[1.55] tracking-[-0.6px] text-[#a1a1a6] md:text-[19px]">
+          <p className="mx-auto my-6 type-lead text-[#a1a1a6]">
             문화로 만나다.
             <br />더 자연스럽게, 더 깊이.
           </p>
           <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-7">
-            <FormLink kind="apply" className="btn btn-light text-xs">
+            <FormLink kind="apply" className="btn btn-light">
               새로운 만남 시작하기
             </FormLink>
             <Link
               href="/programs"
-              className="flex min-h-11 items-center gap-3 text-xs text-[#c7c7ce] hover:text-white"
+              className="flex min-h-11 items-center gap-3 type-body-sm text-[#c7c7ce] hover:text-white"
             >
-              프로그램 살펴보기 <span className="text-base">↗</span>
+              프로그램 살펴보기 <span className="type-glyph-sm">↗</span>
             </Link>
           </div>
         </div>
@@ -70,7 +70,7 @@ export function Hero() {
               <ellipse cx="552" cy="194" rx="157" ry="124" transform="rotate(-27 552 194)" />
             </g>
           </svg>
-          <div className="-mt-2 flex justify-between px-[18px] text-[9px] tracking-[1.5px] text-[#67676d] md:px-[70px] md:text-[10px] md:tracking-[2px]">
+          <div className="-mt-2 flex justify-between px-[18px] type-label font-normal text-[#67676d] md:px-[70px]">
             <span>DIFFERENT CULTURES.</span>
             <span>ONE CONNECTION.</span>
           </div>

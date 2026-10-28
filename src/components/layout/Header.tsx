@@ -17,7 +17,7 @@ export function Header() {
         <Link
           href="/"
           aria-label="K-MOA 홈"
-          className="flex min-h-11 items-center whitespace-nowrap text-2xl font-bold tracking-[-1.5px]"
+          className="flex min-h-11 items-center whitespace-nowrap type-logo"
           onClick={() => setOpen(false)}
         >
           K-MOA<span className="text-[#919195]">.</span>
@@ -40,7 +40,7 @@ export function Header() {
                 aria-current={active ? "page" : undefined}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "relative flex min-h-11 min-w-11 items-center text-sm md:text-[11px] md:font-normal lg:text-xs",
+                  "relative flex min-h-11 min-w-11 items-center type-nav",
                   active ? "text-[#161618]" : "text-[#717176] hover:text-[#161618]",
                 )}
               >
@@ -62,7 +62,7 @@ export function Header() {
           </FormLink>
           <button
             type="button"
-            className="-mr-2 flex h-11 w-11 items-center justify-center text-[21px] md:hidden"
+            className="-mr-2 flex h-11 w-11 items-center justify-center type-glyph md:hidden"
             aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
             aria-expanded={open}
             aria-controls="main-nav"

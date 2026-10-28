@@ -2,7 +2,8 @@ import Link from "next/link";
 import { INSTAGRAM_URL, NAV_ITEMS } from "@/config/site";
 import { FormLink } from "@/components/ui/FormLink";
 
-const linkClass = "flex min-h-11 items-center text-[11px] text-mute hover:text-ink lg:min-h-8";
+const linkClass =
+  "flex min-h-11 min-w-11 items-center type-caption text-mute hover:text-ink lg:min-h-8";
 
 export function Footer() {
   return (
@@ -10,22 +11,19 @@ export function Footer() {
       <div className="wrap">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-[2fr_1fr_1fr_1fr] md:gap-9">
           <div className="col-span-2 md:col-span-1">
-            <Link
-              href="/"
-              className="inline-flex min-h-11 items-center text-2xl font-bold tracking-[-1.5px]"
-            >
+            <Link href="/" className="inline-flex min-h-11 items-center type-logo">
               K-MOA<span className="text-[#919195]">.</span>
             </Link>
-            <p className="my-4 text-[10px] text-mute md:text-[11px]">
+            <p className="my-4 type-caption text-mute">
               Culture meets Language.
               <br />
               내·외국인이 문화로 만나는 2030 교류 플랫폼
             </p>
-            <span className="text-[10px] text-mute">문화로 만나고, 언어로 가까워져요.</span>
+            <span className="type-caption text-mute">문화로 만나고, 언어로 가까워져요.</span>
           </div>
 
           <div>
-            <h4 className="mb-3 text-[11px] font-semibold text-[#515156]">둘러보기</h4>
+            <h4 className="mb-3 type-caption font-semibold text-[#515156]">둘러보기</h4>
             {NAV_ITEMS.filter((i) => i.href !== "/contact").map((item) => (
               <Link key={item.href} href={item.href} className={linkClass}>
                 {item.label}
@@ -34,7 +32,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-3 text-[11px] font-semibold text-[#515156]">지원</h4>
+            <h4 className="mb-3 type-caption font-semibold text-[#515156]">지원</h4>
             <Link href="/contact" className={linkClass}>
               자주 묻는 질문
             </Link>
@@ -47,15 +45,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-3 text-[11px] font-semibold text-[#515156]">Follow</h4>
+            <h4 className="mb-3 type-caption font-semibold text-[#515156]">Follow</h4>
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
               ↗ @k_moa_official
             </a>
-            <p className="text-[10px] text-mute md:text-[11px]">Instagram에서 소식을 확인하세요.</p>
+            <p className="type-caption text-mute">Instagram에서 소식을 확인하세요.</p>
           </div>
         </div>
 
-        <div className="mt-9 flex flex-col gap-2 border-t border-[#d9d9df] pt-5 text-[9px] text-[#99999f] md:flex-row md:justify-between">
+        <div className="mt-9 flex flex-col gap-2 border-t border-[#d9d9df] pt-5 type-micro text-[#99999f] md:flex-row md:justify-between">
           <span>상호 K-MOA · 사업자 정보는 운영 정보 확정 후 입력</span>
           <span>© 2026 K-MOA. All rights reserved.</span>
         </div>

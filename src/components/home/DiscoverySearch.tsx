@@ -24,10 +24,8 @@ export function DiscoverySearch() {
     <section className="border-b border-line bg-white py-7 md:py-10">
       <div className="wrap flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-8 lg:gap-[50px]">
         <div>
-          <span className="eyebrow mb-2 block text-[8px]">FIND YOUR MOMENT</span>
-          <h2 className="text-xl font-semibold tracking-[-0.7px] md:text-[19px] lg:text-[22px]">
-            어떤 만남을 찾고 있나요?
-          </h2>
+          <span className="eyebrow mb-2 block">FIND YOUR MOMENT</span>
+          <h2 className="type-subheading">어떤 만남을 찾고 있나요?</h2>
         </div>
         <form
           onSubmit={onSubmit}
@@ -38,13 +36,13 @@ export function DiscoverySearch() {
             placeholder="프로그램 또는 관심사"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="min-h-11 w-full basis-full bg-transparent px-3 text-xs outline-none md:min-w-0 md:flex-1 md:basis-auto md:px-4"
+            className="min-h-11 w-full basis-full bg-transparent px-3 type-body-sm outline-none md:min-w-0 md:flex-1 md:basis-auto md:px-4"
           />
           <select
             aria-label="언어 선택"
             value={lang}
             onChange={(e) => setLang(e.target.value)}
-            className="min-h-11 flex-1 bg-transparent px-2 text-[11px] text-[#727279] outline-none md:w-[110px] md:flex-none"
+            className="min-h-11 flex-1 bg-transparent px-2 type-caption text-[#727279] outline-none md:w-[110px] md:flex-none"
           >
             <option value="">모든 언어</option>
             {LANGS.map((l) => (

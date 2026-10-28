@@ -31,7 +31,7 @@ export function ReviewsSlider({ reviews }: { reviews: Review[] }) {
             type="button"
             aria-label="이전 후기"
             onClick={() => move(-1)}
-            className="h-11 w-11 rounded-full border border-[#dcdce1] text-lg hover:border-[#929298]"
+            className="h-11 w-11 rounded-full border border-[#dcdce1] type-glyph-sm hover:border-[#929298]"
           >
             ‹
           </button>
@@ -39,7 +39,7 @@ export function ReviewsSlider({ reviews }: { reviews: Review[] }) {
             type="button"
             aria-label="다음 후기"
             onClick={() => move(1)}
-            className="h-11 w-11 rounded-full border border-[#dcdce1] text-lg hover:border-[#929298]"
+            className="h-11 w-11 rounded-full border border-[#dcdce1] type-glyph-sm hover:border-[#929298]"
           >
             ›
           </button>

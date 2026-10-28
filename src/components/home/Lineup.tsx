@@ -51,23 +51,19 @@ export function Lineup({ withHeading = true }: { withHeading?: boolean }) {
                   dark ? "bg-ink text-soft" : "bg-soft",
                 )}
               >
-                <div
-                  className={cn("eyebrow text-[9px]", dark ? "text-[#9f9fa7]" : "text-[#7a7a82]")}
-                >
+                <div className={cn("eyebrow", dark ? "text-[#9f9fa7]" : "text-[#7a7a82]")}>
                   MOA {item.en}
                 </div>
-                <h3 className="mb-3 mt-3 text-[30px] font-semibold tracking-[-1.1px] md:text-[25px] lg:text-[29px]">
-                  {type}
-                </h3>
+                <h3 className="mb-3 mt-3 type-feature">{type}</h3>
                 <p
                   className={cn(
-                    "text-xs md:min-h-12 md:text-[13px]",
+                    "type-body-sm md:min-h-12",
                     dark ? "text-[#9f9fa7]" : "text-[#8a8a91]",
                   )}
                 >
                   {item.summary}
                 </p>
-                <dl className="my-6 grid grid-cols-[38px_minmax(0,1fr)] gap-3 text-[11px] leading-[1.8] md:text-[10px] lg:text-[11px]">
+                <dl className="my-6 grid grid-cols-[38px_minmax(0,1fr)] gap-3 type-caption">
                   <dt className={dark ? "text-[#9f9fa7]" : "text-mute"}>형태</dt>
                   <dd>{item.form}</dd>
                   <dt className={dark ? "text-[#9f9fa7]" : "text-mute"}>예시</dt>
@@ -77,7 +73,7 @@ export function Lineup({ withHeading = true }: { withHeading?: boolean }) {
                 </dl>
                 <Link
                   href={`/category?type=${encodeURIComponent(type)}`}
-                  className={cn("btn w-full text-xs", dark ? "btn-light" : "btn-outline")}
+                  className={cn("btn w-full", dark ? "btn-light" : "btn-outline")}
                 >
                   프로그램 보기
                 </Link>
