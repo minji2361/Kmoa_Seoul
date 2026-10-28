@@ -1,0 +1,9 @@
+# Cursor AI 가 읽거나 모델로 전송하지 않도록 제외할 파일 (.gitignore 와 같은 문법)
+# 비밀 값과 비공개 SQL 보호용
+
+.env
+.env.*
+!.env.example
+supabase/private/
+*.pem
+*.key
