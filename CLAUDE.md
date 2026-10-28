@@ -76,9 +76,24 @@ K-MOA는 모바일·태블릿·PC(노트북/데스크탑) 모두에서 사용하
 - **현재 폰트**: Pretendard Variable — SIL Open Font License 1.1(개인·상업적 이용, 웹폰트 임베딩 허용). 출처: https://github.com/orioncactus/pretendard, npm 패키지 `pretendard`. 라이선스 사본: `public/licenses/Pretendard-OFL-1.1.txt`.
 - **선정 이유**: 한글·영문을 모두 지원하고, 제공된 UI(HTML)의 시스템 산세리프(`-apple-system`, `Helvetica Neue`, `Malgun Gothic`) 인상과 가장 가까우며, OS와 기기에 관계없이 같은 모양으로 표시된다.
 - **성능**: `dynamic-subset`(글자 범위별 woff2를 필요한 만큼만 로드, `font-display: swap`)을 사용한다.
-- **관리 위치**: `src/styles/fonts.css`(폰트 import와 `--font-sans`, `--font-serif` 변수)와 `tailwind.config.ts`의 `fontFamily`. **폰트를 바꿀 때는 이 두 파일만 수정한다.**
+- **관리 위치**: `src/styles/fonts.css`(폰트 import, `--font-sans`, `--font-serif`, `--font-scale`)와 `tailwind.config.ts`의 `fontFamily`. 글자 크기·행간·자간은 아래 "타이포그래피 규칙"의 `src/styles/typography.ts`에서 관리한다. **폰트를 바꿀 때는 `fonts.css`와 `typography.ts`만 수정한다.**
 - **금지**: 페이지·컴포넌트에서 `font-family`를 직접 지정하거나 `font-[...]` 임의 값으로 폰트를 하드코딩하지 않는다. Tailwind `font-sans`/`font-serif`만 사용한다.
 - **새 폰트를 도입할 때**: 상업적 이용 가능 여부와 라이선스를 공식 출처에서 확인하고(불명확하면 사용 금지), 라이선스 사본을 `public/licenses/`에 두며, 폰트명·선정 이유·라이선스·공식 출처를 보고한다. UI(HTML)에 폰트가 지정돼 있으면 먼저 검토하되 라이선스가 불명확하거나 상업적 이용이 불가하면 대체한다.
+
+## 타이포그래피 규칙 (필수)
+
+현재 폰트(Pretendard)는 최종 확정이 아니며, 폰트 변경은 **별도 요청이 있을 때만** 한다. 폰트를 바꾸더라도 UI가 무너지지 않도록 글자 스타일을 역할별 한 곳에서 관리한다.
+
+- **관리 위치**: 글자 크기·행간·자간·굵기는 `src/styles/typography.ts`(역할 정의)에서만 관리한다. `tailwind.config.ts`의 플러그인이 이를 `type-<역할>` 클래스로 만든다. 폰트 종류와 전체 크기 보정(`--font-scale`)은 `src/styles/fonts.css`에서 관리한다.
+- **역할 클래스 사용**: 컴포넌트에서는 `type-display`, `type-title`, `type-heading`, `type-subheading`, `type-card-title`, `type-lead`, `type-body`, `type-body-sm`, `type-caption`, `type-label`, `type-button`, `type-nav` 등 역할 클래스만 쓴다. 새 역할이 필요하면 `typography.ts`에 추가한다.
+- **금지**: 컴포넌트·페이지에 `text-[..px]`, `text-xs/sm/base/lg/xl`, `tracking-[..]`, `leading-[..]`, `font-[..]` 같은 글자 크기·자간·행간·폰트 하드코딩. (`font-medium`/`font-semibold` 같은 굵기 강조와 색상 클래스는 허용)
+- **가독성 기준**: 모바일 최소 글자 크기 12px(영문 대문자 라벨 `type-label`만 11px). 일반 텍스트 색은 배경 대비 4.5:1 이상이며 `text-mute`(밝은 배경), `text-mute-dark`(어두운 배경), `text-mute-strong`(옅은 칩·아바타 위)을 쓴다. `text-faint`는 큰 장식 글자 전용이다.
+- **텍스트 일괄 확대 금지**: 역할과 가독성을 기준으로 필요한 역할만 조정한다. 제목류는 디자인 의도에 맞춰 유지한다.
+- **한글 줄바꿈**: 전역 `word-break: keep-all`과 `overflow-wrap: anywhere`를 유지한다. 제목류 역할은 `text-wrap: balance`, 본문류는 `pretty`를 쓴다.
+- **폰트가 바뀌어도 견디는 레이아웃**: 글자 양·폰트 폭에 묶인 고정 크기(`min-h-[..px]`, `w-[..px]`, `max-w-[..px]`, `grid-cols-[..px_..]`)를 텍스트 영역에 쓰지 않는다. 대신 `em` 단위, `min-h-[2lh]`, `flex`/`grid`, 같은 줄 카드 정렬용 `subgrid`(`md:row-span-N md:grid md:grid-rows-subgrid`), `flex-wrap`을 쓴다. 이미지·타일 영역 같은 시각적 치수는 고정값을 허용한다.
+- **PC·태블릿·모바일**: 기기별 조정은 역할 값의 `size: [모바일, md, lg]`로 한다. 모바일은 터치와 가독성을 우선하고 PC는 넓은 화면을 활용한다.
+- **폰트 교체 점검 절차** (폰트를 바꾼 뒤): ① `fonts.css`의 폰트와 필요하면 `--font-scale`만 조정 → ② 모든 페이지를 320, 375, 768, 1024, 1280px에서 열어 가로 스크롤, 화면 밖 넘침, 글자 잘림, 콘솔 오류, 터치 영역 44px, 12px 미만 글자 비율, 명암비를 점검 → ③ 어긋나는 곳은 컴포넌트가 아니라 `typography.ts`나 레이아웃 규칙(위 항목)으로 해결 → ④ 라이선스와 출처를 확인하고 "폰트 적용 규칙"에 따라 보고한다.
+- 새 폰트도 상업적 이용이 허용되는 무료 폰트를 우선 검토한다.
 
 ## Supabase / SQL 보안 규칙
 

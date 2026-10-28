@@ -14,4 +14,5 @@ alwaysApply: true
 - 관련 없는 파일을 수정/삭제하지 않고, 기존 변경사항을 덮어쓰지 않는다.
 - 모든 페이지/컴포넌트는 반응형(Mobile First)이 기본이다. 상세는 `20-responsive.mdc`.
 - 폰트는 `src/styles/fonts.css`와 `tailwind.config.ts`에서만 관리한다. 컴포넌트에서 font-family를 직접 지정하지 않는다. 상세는 `30-fonts.mdc`.
+- 글자 크기·행간·자간은 `src/styles/typography.ts`의 역할 클래스(`type-*`)만 사용하고 `text-[..px]`·`tracking-[..]`·`leading-[..]` 등을 하드코딩하지 않는다. 상세는 `40-typography.mdc`.
 - 작업 후 변경 파일과 테스트 결과를 보고한다.
