@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="wrap">
           <div className="eyebrow mb-5">BRAND STORY</div>
-          <div className="max-w-[820px] type-story">
+          <div className="max-w-[39em] type-story">
             <h2 className="type-heading">왜 K-MOA일까요?</h2>
             <p className="my-6 text-mute">
               길거리에서 우연히 만난 낯선 모임, 목적이 불분명한 1회성 매칭, 어색하고 경계심만 남았던

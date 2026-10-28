@@ -7,15 +7,15 @@ import Link from "next/link";
 
 export function ReviewCard({ review: r }: { review: Review }) {
   return (
-    <article className="rounded-[18px] bg-soft p-[27px] md:rounded-[20px] md:p-6 lg:p-[29px]">
-      <Tag>{r.program}</Tag>
-      <div aria-hidden className="mt-5 type-quote-mark font-serif text-faint">
-        “
+    <article className="rounded-[18px] bg-soft p-[27px] md:row-span-4 md:grid md:grid-rows-subgrid md:gap-y-0 md:rounded-[20px] md:p-6 lg:p-[29px]">
+      <div>
+        <Tag>{r.program}</Tag>
+        <div aria-hidden className="mt-5 type-quote-mark font-serif text-faint">
+          “
+        </div>
       </div>
-      <blockquote className="mx-0 mb-5 mt-3 type-quote md:min-h-[150px] lg:min-h-32">
-        {r.quote}
-      </blockquote>
-      <p className="mb-5 type-body-sm text-mute md:min-h-[100px] lg:min-h-16">{r.summary}</p>
+      <blockquote className="mx-0 mb-5 mt-3 type-quote">{r.quote}</blockquote>
+      <p className="mb-5 type-body-sm text-mute">{r.summary}</p>
       <div className="flex items-center gap-2.5 border-t border-[#e0e0e5] pt-4 type-caption">
         <span className="flex h-[29px] w-[29px] shrink-0 items-center justify-center rounded-full bg-[#dedee3] type-micro text-mute-strong">
           {r.initials}

@@ -47,20 +47,20 @@ export function Lineup({ withHeading = true }: { withHeading?: boolean }) {
               <article
                 key={item.en}
                 className={cn(
-                  "rounded-[20px] p-[29px] md:rounded-[22px] md:p-[27px] lg:p-9",
+                  "rounded-[20px] p-[29px] md:row-span-4 md:grid md:grid-rows-subgrid md:gap-y-0 md:rounded-[22px] md:p-[27px] lg:p-9",
                   dark ? "bg-ink text-soft" : "bg-soft",
                 )}
               >
-                <div className={cn("eyebrow", dark ? "text-mute-dark" : "text-mute")}>
-                  MOA {item.en}
+                <div>
+                  <div className={cn("eyebrow", dark ? "text-mute-dark" : "text-mute")}>
+                    MOA {item.en}
+                  </div>
+                  <h3 className="mb-3 mt-3 type-feature">{type}</h3>
                 </div>
-                <h3 className="mb-3 mt-3 type-feature">{type}</h3>
-                <p
-                  className={cn("type-body-sm md:min-h-12", dark ? "text-mute-dark" : "text-mute")}
-                >
+                <p className={cn("type-body-sm", dark ? "text-mute-dark" : "text-mute")}>
                   {item.summary}
                 </p>
-                <dl className="my-6 grid grid-cols-[38px_minmax(0,1fr)] gap-3 type-caption">
+                <dl className="my-6 grid grid-cols-[3em_minmax(0,1fr)] gap-3 type-caption">
                   <dt className={dark ? "text-mute-dark" : "text-mute"}>형태</dt>
                   <dd>{item.form}</dd>
                   <dt className={dark ? "text-mute-dark" : "text-mute"}>예시</dt>

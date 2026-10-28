@@ -9,17 +9,17 @@ import type { Program } from "@/types/program";
 
 export function ProgramCard({ program: p }: { program: Program }) {
   return (
-    <article className="grid grid-cols-[112px_minmax(0,1fr)] overflow-hidden rounded-[15px] bg-white transition hover:-translate-y-1 hover:shadow-[0_16px_45px_rgba(0,0,0,0.07)] md:block md:rounded-[19px]">
+    <article className="grid grid-cols-[7.5em_minmax(0,1fr)] overflow-hidden rounded-[15px] bg-white transition hover:-translate-y-1 hover:shadow-[0_16px_45px_rgba(0,0,0,0.07)] md:flex md:flex-col md:rounded-[19px]">
       <Tile
         label={p.visual}
         tone={p.tone}
         className="h-full min-h-[191px] p-3 type-tile md:h-[235px] md:p-6 lg:h-[215px]"
       />
-      <div className="p-4 md:p-[22px]">
+      <div className="p-4 md:flex md:flex-1 md:flex-col md:p-[22px]">
         <div className="mb-2 type-caption text-mute">
           {formatProgramDate(p.date)} · {p.time}
         </div>
-        <h3 className="mb-2 type-card-title lg:min-h-[49px]">
+        <h3 className="mb-2 type-card-title lg:min-h-[2lh]">
           <ModalTrigger
             label={p.title}
             title={p.title}
@@ -35,11 +35,13 @@ export function ProgramCard({ program: p }: { program: Program }) {
           <Tag>{p.category}</Tag>
           <Tag>{p.type}</Tag>
         </div>
-        <div className="mt-4 flex items-center justify-between gap-1.5 border-t border-[#eeeef0] pt-3 md:mt-5 md:pt-4">
-          <small className="type-caption text-mute">{p.count}</small>
-          <FormLink kind="apply" className="btn btn-sm shrink-0 px-3">
-            바로 신청하기
-          </FormLink>
+        <div className="md:mt-auto">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-1.5 border-t border-[#eeeef0] pt-3 md:mt-5 md:pt-4">
+            <small className="type-caption text-mute">{p.count}</small>
+            <FormLink kind="apply" className="btn btn-sm shrink-0 px-3">
+              바로 신청하기
+            </FormLink>
+          </div>
         </div>
       </div>
     </article>

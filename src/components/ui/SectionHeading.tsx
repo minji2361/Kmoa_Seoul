@@ -12,7 +12,7 @@ export function SectionHeading({ title, sub, linkLabel, href }: SectionHeadingPr
     <div className="mb-7 flex items-start justify-between gap-3 md:mb-10 md:items-end">
       <div>
         <h2 className="type-heading">{title}</h2>
-        {sub && <p className="mt-3 max-w-[265px] type-subtitle text-mute md:max-w-none">{sub}</p>}
+        {sub && <p className="mt-3 max-w-[19em] type-subtitle text-mute md:max-w-none">{sub}</p>}
       </div>
       {linkLabel && href && (
         <Link
