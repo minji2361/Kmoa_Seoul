@@ -18,3 +18,7 @@ function httpsUrlOrNull(value: string | undefined): string | null {
 
 export const APPLY_FORM_URL = httpsUrlOrNull(process.env.NEXT_PUBLIC_APPLY_FORM_URL);
 export const PARTNER_FORM_URL = httpsUrlOrNull(process.env.NEXT_PUBLIC_PARTNER_FORM_URL);
+
+// 외부 폼 주소가 설정돼 있는지 (미설정이면 Contact 페이지에서 "준비 중" 안내를 보여준다)
+export const APPLY_FORM_CONFIGURED = APPLY_FORM_URL !== null;
+export const PARTNER_FORM_CONFIGURED = PARTNER_FORM_URL !== null;

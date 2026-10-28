@@ -1,4 +1,7 @@
+"use client";
+
 import { FormLink } from "@/components/ui/FormLink";
+import { ModalTrigger } from "@/components/ui/ModalTrigger";
 import { Tag } from "@/components/ui/Tag";
 import { Tile } from "@/components/ui/Tile";
 import { formatProgramDate } from "@/lib/format";
@@ -17,7 +20,13 @@ export function ProgramCard({ program: p }: { program: Program }) {
           {formatProgramDate(p.date)} · {p.time}
         </div>
         <h3 className="mb-2 text-sm font-semibold leading-[1.45] tracking-[-0.4px] md:text-base lg:min-h-[49px]">
-          {p.title}
+          <ModalTrigger
+            label={p.title}
+            title={p.title}
+            triggerClassName="text-left font-semibold hover:underline"
+          >
+            <ProgramDetail program={p} />
+          </ModalTrigger>
         </h3>
         <div className="mb-2 text-[10px] leading-[1.7] text-[#96969c]">
           ⌖ {p.place} · {p.langs.join(" / ")}
@@ -34,5 +43,47 @@ export function ProgramCard({ program: p }: { program: Program }) {
         </div>
       </div>
     </article>
+  );
+}
+
+function ProgramDetail({ program: p }: { program: Program }) {
+  return (
+    <div className="font-normal">
+      <Tile
+        label={p.visual}
+        tone={p.tone}
+        className="mb-5 h-[200px] rounded-[13px] p-6 text-[26px]"
+      />
+      <div className="flex gap-1">
+        <Tag>{p.category}</Tag>
+        <Tag>{p.type}</Tag>
+      </div>
+      <p className="my-5 text-mute">{p.description}</p>
+      <div className="rounded-[18px] border border-line p-6">
+        <strong>
+          {formatProgramDate(p.date)} · {p.time}
+        </strong>
+        <p className="mt-2 text-sm text-mute">
+          ⌖ {p.place}
+          <br />
+          언어: {p.langs.join(" / ")}
+          <br />
+          진행: {p.duration}
+        </p>
+      </div>
+      <h3 className="mt-6 text-xl font-semibold">함께할 활동</h3>
+      <ul className="mt-2 list-disc pl-5">
+        {p.activities.map((a) => (
+          <li key={a}>{a}</li>
+        ))}
+      </ul>
+      <div className="my-5 rounded-[11px] bg-soft px-4 py-3 text-[11px] text-mute">
+        예시 프로그램입니다. 실제 일정·상세 장소·참가비·취소 및 환불 기준은 운영 정보 확정 후 안내가
+        필요합니다.
+      </div>
+      <FormLink kind="apply" className="btn w-full">
+        이 프로그램 신청하기
+      </FormLink>
+    </div>
   );
 }

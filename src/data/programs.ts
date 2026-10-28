@@ -7,6 +7,8 @@ export const PROGRAM_CATEGORIES: ProgramCategory[] = [
   "Traditional & Daily",
 ];
 
+export const PROGRAM_LANGUAGES = ["English", "한국어", "기타 언어"];
+
 export const PROGRAM_TYPES: ProgramType[] = ["모아 데이", "모아 클럽", "모아 크루"];
 
 // 제공된 UI(HTML)의 예시 데이터. 운영 일정 확정 후 Supabase 로 이전한다.

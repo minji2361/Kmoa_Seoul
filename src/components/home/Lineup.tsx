@@ -27,16 +27,18 @@ const LINEUP = [
   },
 ];
 
-export function Lineup() {
+export function Lineup({ withHeading = true }: { withHeading?: boolean }) {
   return (
     <section className="section">
       <div className="wrap">
-        <SectionHeading
-          title="만나는 방식도, 당신답게."
-          sub="가볍게 하루. 취향으로 꾸준히. 함께 깊어지는 5주."
-          linkLabel="프로그램 비교"
-          href="/programs"
-        />
+        {withHeading && (
+          <SectionHeading
+            title="만나는 방식도, 당신답게."
+            sub="가볍게 하루. 취향으로 꾸준히. 함께 깊어지는 5주."
+            linkLabel="프로그램 비교"
+            href="/programs"
+          />
+        )}
         <div className="grid gap-4 md:grid-cols-3 md:gap-6">
           {LINEUP.map((item, i) => {
             const dark = i === 2;
