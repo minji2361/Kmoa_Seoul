@@ -87,7 +87,7 @@ export function ProgramsExplorer({ programs }: { programs: Program[] }) {
                     aria-pressed={active}
                     onClick={() => setFilters((f) => ({ ...f, [row.key]: v }))}
                     className={cn(
-                      "min-h-11 rounded-full border px-3 text-[10px] transition hover:border-[#929298] md:min-h-9 md:px-4 md:text-[11px]",
+                      "min-h-11 min-w-11 rounded-full border px-3 text-[10px] transition hover:border-[#929298] lg:min-h-9 md:px-4 md:text-[11px]",
                       active
                         ? "border-ink bg-ink text-white hover:border-ink"
                         : "border-[#dcdce1] bg-transparent",

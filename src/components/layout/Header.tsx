@@ -17,7 +17,7 @@ export function Header() {
         <Link
           href="/"
           aria-label="K-MOA 홈"
-          className="whitespace-nowrap text-2xl font-bold tracking-[-1.5px]"
+          className="flex min-h-11 items-center whitespace-nowrap text-2xl font-bold tracking-[-1.5px]"
           onClick={() => setOpen(false)}
         >
           K-MOA<span className="text-[#919195]">.</span>
@@ -40,7 +40,7 @@ export function Header() {
                 aria-current={active ? "page" : undefined}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "relative flex min-h-11 items-center text-sm md:text-[11px] md:font-normal lg:text-xs",
+                  "relative flex min-h-11 min-w-11 items-center text-sm md:text-[11px] md:font-normal lg:text-xs",
                   active ? "text-[#161618]" : "text-[#717176] hover:text-[#161618]",
                 )}
               >

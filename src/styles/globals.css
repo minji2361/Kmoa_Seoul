@@ -46,7 +46,7 @@
   }
 
   .btn-sm {
-    @apply min-h-11 px-4 py-2 text-[11px] md:min-h-[33px];
+    @apply min-h-11 px-4 py-2 text-[11px] lg:min-h-[33px];
   }
 
   .eyebrow {

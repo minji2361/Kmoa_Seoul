@@ -23,7 +23,7 @@ export function ProgramCard({ program: p }: { program: Program }) {
           <ModalTrigger
             label={p.title}
             title={p.title}
-            triggerClassName="text-left font-semibold hover:underline"
+            triggerClassName="relative text-left font-semibold hover:underline after:absolute after:-inset-x-1 after:-inset-y-3 after:content-['']"
           >
             <ProgramDetail program={p} />
           </ModalTrigger>
