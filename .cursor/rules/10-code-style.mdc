@@ -1,0 +1,11 @@
+---
+description: TypeScript 코드 스타일 및 IDE 중립 규칙
+globs: "**/*.{ts,tsx,js,jsx,json,css,md}"
+alwaysApply: false
+---
+
+- 주 언어는 TypeScript. 코드 스타일은 `.editorconfig`와 저장소의 포맷터/린터 설정을 따른다.
+- IDE 전용 설정·기능에 의존하지 않는다 (IntelliJ에서도 동일하게 동작해야 함).
+- 모든 실행/빌드/테스트는 `package.json` scripts로 터미널에서 실행 가능하게 한다.
+- 비밀 값은 `.env*.local`에만 두고 커밋하지 않는다. 키 이름만 `.env.example`에 기록한다.
+- 주변 코드의 네이밍과 주석 밀도를 따른다. 요청 범위 밖 리팩터링 금지.
