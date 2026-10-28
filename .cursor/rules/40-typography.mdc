@@ -1,0 +1,17 @@
+---
+description: K-MOA 타이포그래피 규칙 (스타일·컴포넌트 작업 시 적용)
+globs: "src/**/*.{ts,tsx,css}"
+alwaysApply: false
+---
+
+기준 문서는 루트의 `CLAUDE.md`의 "타이포그래피 규칙"이다. 현재 폰트는 최종 확정이 아니며, 폰트 변경은 별도 요청이 있을 때만 한다.
+
+- 글자 크기·행간·자간·굵기는 `src/styles/typography.ts`(역할 정의)에서만 관리한다. 폰트 종류와 `--font-scale`은 `src/styles/fonts.css`.
+- 컴포넌트에서는 `type-display`, `type-title`, `type-heading`, `type-subheading`, `type-card-title`, `type-lead`, `type-body`, `type-body-sm`, `type-caption`, `type-label`, `type-button`, `type-nav` 등 **역할 클래스만** 쓴다. 필요한 역할은 `typography.ts`에 추가한다.
+- 금지: `text-[..px]`, `text-xs/sm/base/lg/xl`, `tracking-[..]`, `leading-[..]`, `font-[..]` 하드코딩. (`font-medium`/`font-semibold` 강조와 색상 클래스는 허용)
+- 모바일 최소 글자 크기 12px(영문 대문자 라벨만 11px). 일반 텍스트는 배경 대비 4.5:1 이상: 밝은 배경 `text-mute`, 어두운 배경 `text-mute-dark`, 옅은 칩·아바타 `text-mute-strong`. `text-faint`는 큰 장식 글자 전용.
+- 텍스트를 일괄 확대하지 않는다. 역할과 가독성을 기준으로 필요한 역할만 조정한다.
+- 한글은 전역 `keep-all` + `overflow-wrap: anywhere`. 제목류는 `balance`, 본문류는 `pretty`.
+- 글자 양·폰트 폭에 묶인 고정 크기(`min-h-[..px]`, `w-[..px]`, `max-w-[..px]`, `grid-cols-[..px_..]`)를 텍스트 영역에 쓰지 않는다. `em`, `min-h-[2lh]`, `flex`/`grid`, `subgrid`, `flex-wrap`을 쓴다. 이미지·타일 같은 시각적 치수는 고정값 허용.
+- 기기별 조정은 역할 값의 `size: [모바일, md, lg]`로 한다. 레이아웃은 폰트가 바뀌어 글자 폭·줄바꿈이 달라져도 견뎌야 한다.
+- 폰트 교체 후에는 320/375/768/1024/1280px에서 가로 스크롤, 넘침, 글자 잘림, 콘솔 오류, 터치 영역 44px, 12px 미만 글자, 명암비를 점검하고 결과를 보고한다.

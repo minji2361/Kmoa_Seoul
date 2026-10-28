@@ -7,7 +7,7 @@ alwaysApply: false
 기준 문서는 루트의 `CLAUDE.md`의 "폰트 적용 규칙"이다.
 
 - 현재 폰트: Pretendard Variable (SIL OFL 1.1, 상업적 이용 가능). 출처: https://github.com/orioncactus/pretendard. 라이선스 사본: `public/licenses/Pretendard-OFL-1.1.txt`.
-- 폰트는 `src/styles/fonts.css`(`--font-sans`, `--font-serif`)와 `tailwind.config.ts`의 `fontFamily`에서만 일괄 관리한다. 폰트 변경은 이 두 파일만 수정한다.
+- 폰트는 `src/styles/fonts.css`(`--font-sans`, `--font-serif`, `--font-scale`)와 `tailwind.config.ts`의 `fontFamily`에서 일괄 관리하고, 글자 크기·행간·자간은 `src/styles/typography.ts`에서 관리한다. 폰트 변경은 `fonts.css`와 `typography.ts`만 수정한다. 자세한 규칙은 `40-typography.mdc`.
 - 페이지·컴포넌트에서 `font-family`를 직접 지정하거나 `font-[...]` 로 하드코딩하지 않는다. Tailwind `font-sans` / `font-serif` 만 사용한다.
 - 새 폰트는 상업적 이용 가능 여부와 라이선스를 공식 출처에서 확인한다. 불명확하면 쓰지 않는다. 라이선스 사본을 `public/licenses/`에 두고, 폰트명·선정 이유·라이선스·공식 출처를 보고한다.
 - 로딩 성능을 위해 글자 범위별로 나뉜 subset 웹폰트와 `font-display: swap`을 유지한다.
