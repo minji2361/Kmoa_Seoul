@@ -41,3 +41,8 @@ Thumbs.db
 # temp
 *.tmp
 *.swp
+
+# Supabase: 비공개 SQL(시드·운영 데이터·계정 설정)과 로컬 상태
+supabase/private/
+supabase/.temp/
+supabase/.branches/
