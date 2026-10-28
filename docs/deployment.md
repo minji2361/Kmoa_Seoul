@@ -35,10 +35,19 @@ K-MOA 전용 Supabase·Vercel 프로젝트 구성과 브랜치 운영 방식을 
 
 ## 확인 목록
 
-- [ ] Vercel Deployments에서 `dev-minji` Preview 배포가 Ready
-- [ ] Preview 주소에서 6개 페이지(Home, About, Programs, Category, Reviews, Contact) 정상 표시
-- [ ] Settings → Git 의 Production Branch 가 `main`
-- [ ] 환경변수 3종이 Production·Preview에 적용됨
+- [x] Vercel Deployments에서 `dev-minji` Preview 배포가 Ready
+- [x] Preview 주소에서 6개 페이지(Home, About, Programs, Category, Reviews, Contact) 정상 표시
+- [x] Settings → Git 의 Production Branch 가 `main`
+- [x] 환경변수 3종이 Production·Preview에 적용됨
+- [x] Preview 에서 Supabase 연결 확인: URL·Publishable key·Secret key 모두 정상 응답(임시 점검 주소로 확인 후 삭제함)
+- [ ] Production(`main`) 배포를 환경변수 수정 후 Redeploy (처음 연결 시 만들어진 배포는 수정 전 값으로 빌드됨)
+
+## 환경변수 주의 (실제로 겪은 문제)
+
+- `NEXT_PUBLIC_SUPABASE_URL` 은 **`https://<Reference ID>.supabase.co` 까지만** 쓴다. 끝에 `/` 나 `/rest/v1` 같은 경로를 붙이면 요청이 404 가 된다. (Data API 화면의 REST 주소를 그대로 복사하지 않는다.)
+- Vercel 환경변수는 **새로 만드는 배포부터** 적용된다. 값을 추가·수정한 뒤에는 Deployments 에서 Redeploy 하고, `NEXT_PUBLIC_` 값은 빌드 때 코드에 들어가므로 **"Use existing Build Cache" 를 해제**한다.
+- 각 변수의 Environments 에 Production 과 Preview 가 모두 포함돼야 `dev-minji` Preview 에서도 값이 전달된다.
+- 로컬 `.env.local` 도 같은 형태(도메인까지만)로 맞춘다.
 
 ## 주의
 
