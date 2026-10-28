@@ -14,8 +14,8 @@ export function ClubActivities() {
         <div className="grid gap-4 md:grid-cols-3 md:gap-6">
           {ACTIVITIES.map((a) => (
             <article key={a.title} className="rounded-[22px] bg-soft p-[25px] md:p-8">
-              <h3 className="text-[17px] font-semibold">{a.title}</h3>
-              <p className="mt-3 text-sm text-mute">{a.text}</p>
+              <h3 className="type-subheading">{a.title}</h3>
+              <p className="mt-3 type-body text-mute">{a.text}</p>
             </article>
           ))}
         </div>

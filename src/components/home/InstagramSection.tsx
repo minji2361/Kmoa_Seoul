@@ -31,12 +31,12 @@ export function InstagramSection() {
               <Tile
                 label={p.label}
                 tone={p.tone}
-                className="min-h-[100px] p-3 text-xs md:min-h-[145px] md:p-4 md:text-[17px]"
+                className="min-h-[100px] p-3 type-tile-sm md:min-h-[145px] md:p-4"
               />
             </a>
           ))}
         </div>
-        <p className="mt-4 text-[10px] text-[#99999f] md:text-[11px]">
+        <p className="mt-4 type-caption text-[#99999f]">
           실시간 피드 연동은 운영 계정 연결 후 사용할 수 있습니다.
         </p>
       </div>

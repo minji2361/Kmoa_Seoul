@@ -55,7 +55,7 @@ export function ToastHost() {
         margin: 0,
         display: !popoverSupported && !message ? "none" : undefined,
       }}
-      className="fixed max-w-[90%] rounded-xl border-0 bg-[#252528] px-6 py-3 text-center text-xs text-white shadow-[0_10px_35px_rgba(20,33,61,0.3)]"
+      className="fixed max-w-[90%] rounded-xl border-0 bg-[#252528] px-6 py-3 type-body-sm text-center text-white shadow-[0_10px_35px_rgba(20,33,61,0.3)]"
     >
       {message}
     </div>

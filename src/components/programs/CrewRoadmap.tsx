@@ -22,18 +22,18 @@ export function CrewRoadmap() {
                   className="absolute left-[17px] top-1/2 h-[calc(100%+12px)] w-0.5 bg-[#c7c7ce] md:left-1/2 md:top-5 md:h-0.5 md:w-[calc(100%+16px)]"
                 />
               )}
-              <b className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink text-xs font-medium text-white outline outline-4 outline-soft md:mx-auto md:mb-5 md:h-[39px] md:w-[39px] md:text-sm">
+              <b className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink type-body-sm font-medium text-white outline outline-4 outline-soft md:mx-auto md:mb-5 md:h-[39px] md:w-[39px]">
                 {i + 1}
               </b>
               <div className="flex-1 rounded-[15px] bg-white px-[22px] py-[18px] text-left md:p-6 md:text-center">
-                <small className="text-[9px] text-[#96969d] md:text-[10px]">{i + 1}주차</small>
+                <small className="type-micro text-[#96969d]">{i + 1}주차</small>
                 <br />
-                <strong className="text-xs font-semibold md:text-[13px]">{step}</strong>
+                <strong className="type-body-sm font-semibold">{step}</strong>
               </div>
             </li>
           ))}
         </ol>
-        <div className="mt-6 rounded-[22px] bg-white p-[25px] text-center text-[13px] md:p-8">
+        <div className="mt-6 rounded-[22px] bg-white p-[25px] type-body-sm text-center md:p-8">
           수료 후에도 이어지는 후속 연결 · 소통 체계를 함께 안내합니다.
         </div>
       </div>

@@ -19,13 +19,7 @@ interface TileProps {
 // 이미지가 준비되기 전까지 쓰는 타이포 타일. 이미지가 생기면 이 컴포넌트만 교체한다.
 export function Tile({ label, tone = "dark", className }: TileProps) {
   return (
-    <div
-      className={cn(
-        "relative flex items-end overflow-hidden font-semibold leading-tight tracking-[-1px]",
-        TONES[tone],
-        className,
-      )}
-    >
+    <div className={cn("relative flex items-end overflow-hidden", TONES[tone], className)}>
       <span
         aria-hidden
         className="pointer-events-none absolute -right-[100px] -top-[100px] h-60 w-60 rounded-full border border-current opacity-15"

@@ -41,10 +41,8 @@ export default function AboutPage() {
       <section className="section">
         <div className="wrap">
           <div className="eyebrow mb-5">BRAND STORY</div>
-          <div className="max-w-[820px] text-base leading-[1.9] md:text-[21px]">
-            <h2 className="text-[29px] font-semibold tracking-[-1.25px] md:text-[36px] lg:text-[43px] lg:tracking-[-1.9px]">
-              왜 K-MOA일까요?
-            </h2>
+          <div className="max-w-[820px] type-story">
+            <h2 className="type-heading">왜 K-MOA일까요?</h2>
             <p className="my-6 text-[#8d8d93]">
               길거리에서 우연히 만난 낯선 모임, 목적이 불분명한 1회성 매칭, 어색하고 경계심만 남았던
               기존의 교류 방식에 지치지 않으셨나요?
@@ -58,7 +56,7 @@ export default function AboutPage() {
           <div className="mt-9 grid gap-4 md:grid-cols-2 md:gap-6">
             <article className="rounded-[22px] bg-soft p-[25px] md:p-8">
               <Tag>FOR GLOBAL FRIENDS</Tag>
-              <h3 className="my-4 text-xl font-semibold">진짜 한국의 일상 속으로</h3>
+              <h3 className="my-4 type-subheading">진짜 한국의 일상 속으로</h3>
               <p className="text-mute">
                 서투른 한국어 교육이나 일회성 관광을 넘어, 진짜 한국의 일상 문화와 언어를 깊이 있게
                 체험하고 싶어요.
@@ -66,14 +64,14 @@ export default function AboutPage() {
             </article>
             <article className="rounded-[22px] bg-soft p-[25px] md:p-8">
               <Tag>FOR KOREAN FRIENDS</Tag>
-              <h3 className="my-4 text-xl font-semibold">문화로 시작하는 자연스러운 회화</h3>
+              <h3 className="my-4 type-subheading">문화로 시작하는 자연스러운 회화</h3>
               <p className="text-mute">
                 단순한 주입식 학원이 아닌, 문화 콘텐츠를 매개로 자연스럽게 소통하는 실전 회화를
                 원해요.
               </p>
             </article>
           </div>
-          <p className="mt-6 text-[15px] text-mute">
+          <p className="mt-6 type-body text-mute">
             K-MOA는 두 가지 니즈를 하나로 묶었습니다. 서로 문화와 언어를 나누며 함께 성장하는
             Win-Win 커뮤니티를 만들어갑니다.
           </p>
@@ -96,11 +94,9 @@ export default function AboutPage() {
           <div className="grid gap-4 md:grid-cols-3 md:gap-6">
             {MISSIONS.map((m, i) => (
               <article key={m.title} className="rounded-[20px] bg-white p-[25px] md:p-8">
-                <strong className="mb-6 block text-[40px] font-normal tracking-[-2px] text-[#b6b6bd] md:text-[44px]">
-                  0{i + 1}
-                </strong>
-                <h3 className="text-[21px] font-medium">{m.title}</h3>
-                <p className="mt-3 text-xs text-mute md:text-[13px]">{m.text}</p>
+                <strong className="mb-6 block type-numeral text-[#b6b6bd]">0{i + 1}</strong>
+                <h3 className="type-subheading font-medium">{m.title}</h3>
+                <p className="mt-3 type-body-sm text-mute">{m.text}</p>
               </article>
             ))}
           </div>
@@ -112,7 +108,7 @@ export default function AboutPage() {
           <div className="grid gap-10 md:grid-cols-2 md:gap-12">
             <div>
               <div className="eyebrow mb-5 text-[#83838b]">TRUST & SAFETY</div>
-              <h2 className="text-[30px] font-semibold leading-tight tracking-[-1.25px] md:text-[36px] lg:text-[43px] lg:tracking-[-1.9px]">
+              <h2 className="type-heading">
                 안심하고 활동에만
                 <br />
                 집중할 수 있도록
@@ -124,8 +120,8 @@ export default function AboutPage() {
             <div>
               {FAQS.slice(1, 4).map((f, i) => (
                 <article key={f.q} className="border-b border-[#313136] py-6">
-                  <h3 className="mb-1.5 text-[17px] font-medium md:text-lg">{SAFETY_TITLES[i]}</h3>
-                  <p className="text-xs text-[#929299] md:text-[13px]">{f.a}</p>
+                  <h3 className="mb-1.5 type-subheading font-medium">{SAFETY_TITLES[i]}</h3>
+                  <p className="type-body-sm text-[#929299]">{f.a}</p>
                 </article>
               ))}
             </div>

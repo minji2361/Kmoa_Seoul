@@ -36,7 +36,7 @@ export function ProgramsPreview({ programs, categories }: ProgramsPreviewProps) 
               aria-pressed={category === c}
               onClick={() => setCategory(c)}
               className={cn(
-                "min-h-11 min-w-11 shrink-0 whitespace-nowrap rounded-full border px-4 text-[10px] transition hover:border-[#929298] lg:min-h-9 md:text-[11px]",
+                "min-h-11 min-w-11 shrink-0 whitespace-nowrap rounded-full border px-4 type-caption transition hover:border-[#929298] lg:min-h-9",
                 category === c
                   ? "border-ink bg-ink text-white hover:border-ink"
                   : "border-[#dcdce1] bg-transparent",
@@ -55,8 +55,8 @@ export function ProgramsPreview({ programs, categories }: ProgramsPreviewProps) 
           </div>
         ) : (
           <div className="rounded-[15px] border border-[#dfdfe3] bg-white p-12 text-center">
-            <h3 className="text-xl font-medium">조건에 맞는 모임이 없어요</h3>
-            <p className="mt-2 text-[13px] text-mute">다른 카테고리를 선택해 보세요.</p>
+            <h3 className="type-subheading font-medium">조건에 맞는 모임이 없어요</h3>
+            <p className="mt-2 type-body-sm text-mute">다른 카테고리를 선택해 보세요.</p>
           </div>
         )}
       </div>

@@ -32,19 +32,12 @@ export function ValueSection() {
               key={v.title}
               className="grid grid-cols-[30px_minmax(0,1fr)] gap-[18px] border-t border-[#d4d4d8] py-6 md:block md:px-[26px] md:py-8"
             >
-              <div
-                aria-hidden
-                className="text-[25px] leading-none text-[#66666e] md:mb-[26px] md:text-[28px]"
-              >
+              <div aria-hidden className="type-glyph-lg text-[#66666e] md:mb-[26px]">
                 {v.icon}
               </div>
               <div>
-                <h3 className="text-[19px] font-semibold tracking-[-0.6px] md:text-xl">
-                  {v.title}
-                </h3>
-                <p className="mt-2 text-xs leading-[1.8] text-mute md:max-w-[300px] md:text-[13px]">
-                  {v.text}
-                </p>
+                <h3 className="type-subheading">{v.title}</h3>
+                <p className="mt-2 type-body-sm text-mute md:max-w-[300px]">{v.text}</p>
               </div>
             </article>
           ))}

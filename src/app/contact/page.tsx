@@ -20,7 +20,7 @@ export default function ContactPage() {
           <SectionHeading title="자주 묻는 질문" sub="편안하고 안전한 만남을 위한 안내" />
           {FAQS.map((f) => (
             <details key={f.q} className="group border-b border-[#dddde2]">
-              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 py-[23px] text-sm font-medium tracking-[-0.5px] md:text-base [&::-webkit-details-marker]:hidden">
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-5 py-[23px] type-card-title font-medium [&::-webkit-details-marker]:hidden">
                 {f.q}
                 <span aria-hidden className="text-mute group-open:hidden">
                   +
@@ -29,7 +29,7 @@ export default function ContactPage() {
                   −
                 </span>
               </summary>
-              <p className="pb-7 pr-6 text-xs text-mute md:text-sm">{f.a}</p>
+              <p className="pb-7 pr-6 type-body-sm text-mute">{f.a}</p>
             </details>
           ))}
         </div>
@@ -40,9 +40,7 @@ export default function ContactPage() {
           <div className="grid gap-4 md:grid-cols-2 md:gap-6">
             <article className="rounded-[22px] bg-white p-[25px] md:p-8">
               <div className="eyebrow">JOIN K-MOA</div>
-              <h2 className="mt-4 text-[29px] font-semibold tracking-[-1.25px]">
-                다음 모임에서 만나요
-              </h2>
+              <h2 className="mt-4 type-heading-sm">다음 모임에서 만나요</h2>
               <p className="mb-6 mt-4 text-mute">원하는 프로그램을 선택하고 신청서를 작성하세요.</p>
               <FormLink kind="apply" className="btn">
                 프로그램 신청하기
@@ -50,9 +48,7 @@ export default function ContactPage() {
             </article>
             <article className="rounded-[22px] bg-white p-[25px] md:p-8">
               <div className="eyebrow">PARTNERSHIP</div>
-              <h2 className="mt-4 text-[29px] font-semibold tracking-[-1.25px]">
-                함께 문화를 만들어요
-              </h2>
+              <h2 className="mt-4 type-heading-sm">함께 문화를 만들어요</h2>
               <p className="mb-6 mt-4 text-mute">
                 공간·콘텐츠·클래스로 K-MOA와 협업하고 싶으신가요?
               </p>
