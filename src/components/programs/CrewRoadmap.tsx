@@ -26,7 +26,7 @@ export function CrewRoadmap() {
                 {i + 1}
               </b>
               <div className="flex-1 rounded-[15px] bg-white px-[22px] py-[18px] text-left md:p-6 md:text-center">
-                <small className="type-micro text-[#96969d]">{i + 1}주차</small>
+                <small className="type-micro text-mute">{i + 1}주차</small>
                 <br />
                 <strong className="type-body-sm font-semibold">{step}</strong>
               </div>

@@ -74,7 +74,7 @@ export function ProgramsExplorer({ programs }: { programs: Program[] }) {
 
         {ROWS.map((row) => (
           <div key={row.key} className="my-5 md:flex md:items-center md:gap-7">
-            <strong className="mb-3 block w-[95px] shrink-0 type-caption font-medium text-[#8e8e95] md:mb-0">
+            <strong className="mb-3 block w-[95px] shrink-0 type-caption font-medium text-mute md:mb-0">
               {row.label}
             </strong>
             <div className="flex flex-wrap gap-1.5 md:gap-2">

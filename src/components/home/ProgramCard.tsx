@@ -28,7 +28,7 @@ export function ProgramCard({ program: p }: { program: Program }) {
             <ProgramDetail program={p} />
           </ModalTrigger>
         </h3>
-        <div className="mb-2 type-caption text-[#96969c]">
+        <div className="mb-2 type-caption text-mute">
           ⌖ {p.place} · {p.langs.join(" / ")}
         </div>
         <div className="flex flex-wrap gap-1">
@@ -36,7 +36,7 @@ export function ProgramCard({ program: p }: { program: Program }) {
           <Tag>{p.type}</Tag>
         </div>
         <div className="mt-4 flex items-center justify-between gap-1.5 border-t border-[#eeeef0] pt-3 md:mt-5 md:pt-4">
-          <small className="type-caption text-[#8c8c92]">{p.count}</small>
+          <small className="type-caption text-mute">{p.count}</small>
           <FormLink kind="apply" className="btn btn-sm shrink-0 px-3">
             바로 신청하기
           </FormLink>

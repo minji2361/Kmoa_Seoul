@@ -32,7 +32,7 @@ export function ValueSection() {
               key={v.title}
               className="grid grid-cols-[30px_minmax(0,1fr)] gap-[18px] border-t border-[#d4d4d8] py-6 md:block md:px-[26px] md:py-8"
             >
-              <div aria-hidden className="type-glyph-lg text-[#66666e] md:mb-[26px]">
+              <div aria-hidden className="type-glyph-lg text-mute md:mb-[26px]">
                 {v.icon}
               </div>
               <div>

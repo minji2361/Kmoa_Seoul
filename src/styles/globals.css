@@ -15,7 +15,10 @@
     }
   }
 
+  /* 한글은 단어 단위로 줄바꿈하고, 너무 긴 단어는 넘치지 않게 끊는다 */
   body {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
     @apply type-body bg-white font-sans text-ink antialiased;
   }
 

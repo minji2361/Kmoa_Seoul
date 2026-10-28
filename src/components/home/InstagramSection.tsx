@@ -36,7 +36,7 @@ export function InstagramSection() {
             </a>
           ))}
         </div>
-        <p className="mt-4 type-caption text-[#99999f]">
+        <p className="mt-4 type-caption text-mute">
           실시간 피드 연동은 운영 계정 연결 후 사용할 수 있습니다.
         </p>
       </div>
