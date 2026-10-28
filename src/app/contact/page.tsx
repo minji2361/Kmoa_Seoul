@@ -3,28 +3,9 @@ import { CtaSection } from "@/components/home/CtaSection";
 import { FormLink } from "@/components/ui/FormLink";
 import { PageHead } from "@/components/ui/PageHead";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { APPLY_FORM_CONFIGURED, INSTAGRAM_URL, PARTNER_FORM_CONFIGURED } from "@/config/site";
 import { FAQS } from "@/data/faq";
 
 export const metadata: Metadata = { title: "Contact / FAQ" };
-
-// 외부 폼 주소가 아직 없으면 버튼 대신 준비 중 안내를 보여준다.
-function PendingNotice() {
-  return (
-    <p className="rounded-[11px] bg-soft px-4 py-3 text-xs text-mute">
-      신청 폼을 준비 중입니다. 그동안은{" "}
-      <a
-        href={INSTAGRAM_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-medium text-ink underline"
-      >
-        Instagram @k_moa_official
-      </a>
-      로 문의해 주세요.
-    </p>
-  );
-}
 
 export default function ContactPage() {
   return (
@@ -63,13 +44,9 @@ export default function ContactPage() {
                 다음 모임에서 만나요
               </h2>
               <p className="mb-6 mt-4 text-mute">원하는 프로그램을 선택하고 신청서를 작성하세요.</p>
-              {APPLY_FORM_CONFIGURED ? (
-                <FormLink kind="apply" className="btn">
-                  프로그램 신청하기
-                </FormLink>
-              ) : (
-                <PendingNotice />
-              )}
+              <FormLink kind="apply" className="btn">
+                프로그램 신청하기
+              </FormLink>
             </article>
             <article className="rounded-[22px] bg-white p-[25px] md:p-8">
               <div className="eyebrow">PARTNERSHIP</div>
@@ -79,13 +56,9 @@ export default function ContactPage() {
               <p className="mb-6 mt-4 text-mute">
                 공간·콘텐츠·클래스로 K-MOA와 협업하고 싶으신가요?
               </p>
-              {PARTNER_FORM_CONFIGURED ? (
-                <FormLink kind="partner" className="btn btn-outline">
-                  플랫폼 입점 신청
-                </FormLink>
-              ) : (
-                <PendingNotice />
-              )}
+              <FormLink kind="partner" className="btn btn-outline">
+                플랫폼 입점 신청
+              </FormLink>
             </article>
           </div>
         </div>
