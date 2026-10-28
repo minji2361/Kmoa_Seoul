@@ -33,7 +33,7 @@ export function ReviewCard({ review: r }: { review: Review }) {
         <ModalTrigger
           label="더 보기"
           title="참가자 인터뷰"
-          triggerClassName="ml-auto flex min-h-11 items-center whitespace-nowrap text-[10px] text-[#535359] hover:text-black"
+          triggerClassName="ml-auto flex min-h-11 min-w-11 items-center justify-end whitespace-nowrap text-[10px] text-[#535359] hover:text-black"
         >
           <Tag>{r.program}</Tag>
           <h3 className="mt-[18px] text-[26px] font-semibold leading-[1.3] tracking-[-0.8px]">

@@ -36,7 +36,7 @@ export function ProgramsPreview({ programs, categories }: ProgramsPreviewProps) 
               aria-pressed={category === c}
               onClick={() => setCategory(c)}
               className={cn(
-                "min-h-11 shrink-0 whitespace-nowrap rounded-full border px-4 text-[10px] transition hover:border-[#929298] md:min-h-9 md:text-[11px]",
+                "min-h-11 min-w-11 shrink-0 whitespace-nowrap rounded-full border px-4 text-[10px] transition hover:border-[#929298] lg:min-h-9 md:text-[11px]",
                 category === c
                   ? "border-ink bg-ink text-white hover:border-ink"
                   : "border-[#dcdce1] bg-transparent",

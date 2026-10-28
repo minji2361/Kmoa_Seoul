@@ -2,7 +2,7 @@ import Link from "next/link";
 import { INSTAGRAM_URL, NAV_ITEMS } from "@/config/site";
 import { FormLink } from "@/components/ui/FormLink";
 
-const linkClass = "flex min-h-11 items-center text-[11px] text-mute hover:text-ink md:min-h-8";
+const linkClass = "flex min-h-11 items-center text-[11px] text-mute hover:text-ink lg:min-h-8";
 
 export function Footer() {
   return (
@@ -10,7 +10,10 @@ export function Footer() {
       <div className="wrap">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-[2fr_1fr_1fr_1fr] md:gap-9">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="text-2xl font-bold tracking-[-1.5px]">
+            <Link
+              href="/"
+              className="inline-flex min-h-11 items-center text-2xl font-bold tracking-[-1.5px]"
+            >
               K-MOA<span className="text-[#919195]">.</span>
             </Link>
             <p className="my-4 text-[10px] text-mute md:text-[11px]">
