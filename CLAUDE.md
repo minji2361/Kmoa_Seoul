@@ -7,7 +7,12 @@ K-MOA 신규 웹사이트 프로젝트. Genie_Seoul(참고용)과 무관한 **�
 - 작업 브랜치: `dev-minji` (다른 브랜치에서 수정 금지)
 - 참고 저장소: https://github.com/minji2361/Genie_Seoul.git (읽기 전용 참고, 절대 수정 금지)
 - 주 언어: TypeScript
-- 기타 기술 스택: 참고 저장소 분석 후 결정 (미정 — 임의로 프레임워크를 확정하지 말 것)
+- 기술 스택 (Genie_Seoul 분석 후 확정):
+  - Next.js 15 (App Router) + React 19, TypeScript 5 (`strict`, 경로 별칭 `@/*` → `src/*`)
+  - Tailwind CSS 3.4 (제공될 HTML을 Tailwind로 옮기기 쉬움)
+  - Supabase: `@supabase/supabase-js` + `@supabase/ssr` (deprecated된 `auth-helpers-nextjs`는 사용 금지)
+  - 품질 도구: ESLint 9(flat config) + Prettier, `tsc --noEmit`
+  - 런타임: Node 22 (`.nvmrc`), 패키지 매니저 npm
 - 호스팅: Vercel (K-MOA 전용 프로젝트)
 - DB: Supabase (K-MOA 전용 프로젝트)
 - 개발 도구: Cursor(주), IntelliJ IDEA(보조), Cursor AI / Claude Code(AI 지원)
@@ -16,7 +21,7 @@ K-MOA 신규 웹사이트 프로젝트. Genie_Seoul(참고용)과 무관한 **�
 
 ## 현재 단계
 
-공통 개발 규칙 설정만 완료된 상태. UI(HTML)와 기획서가 제공되기 전에는 **기능 개발을 시작하지 않는다.**
+공통 개발 규칙과 프로젝트 골격(빈 레이아웃/페이지)만 구성된 상태. UI(HTML)와 기획서가 제공되기 전에는 **기능 개발을 시작하지 않는다.**
 
 ## 필수 규칙
 
@@ -33,13 +38,33 @@ K-MOA 신규 웹사이트 프로젝트. Genie_Seoul(참고용)과 무관한 **�
 11. 기존 변경사항을 임의로 덮어쓰거나 삭제하지 않는다.
 12. 위험한 Git 명령(`reset --hard`, `push --force`, `clean -f`, `checkout .`, `branch -D`, 히스토리 재작성 등)은 사용자 승인 없이 실행하지 않는다.
 
+## 명령어
+
+```bash
+npm install
+npm run dev          # 개발 서버 (http://localhost:3000)
+npm run build        # 프로덕션 빌드
+npm run lint         # ESLint
+npm run typecheck    # tsc --noEmit
+npm run format       # Prettier 적용
+npm run format:check # Prettier 검사
+```
+
+## Supabase / SQL 보안 규칙
+
+- 마이그레이션 SQL(`supabase/migrations/`)은 스키마 정의(테이블, 인덱스, RLS 정책, 함수)만 담고 Git에 올려도 된다.
+- SQL 파일에 **금지**: 비밀번호, API Key, service_role 키, JWT, 실제 사용자 데이터(이메일·이름·연락처 등), 운영 데이터 덤프, 관리자 계정 생성 INSERT.
+- 시드/운영 데이터와 계정 설정 SQL은 Git에 올리지 않고 `supabase/private/`(gitignore) 또는 Supabase Dashboard에서 관리한다.
+- 모든 테이블은 RLS를 활성화하고 정책을 명시한다. service_role 키는 서버 코드에서만 사용하고 `NEXT_PUBLIC_` 접두사를 붙이지 않는다.
+- DB 변경(마이그레이션 적용, 데이터 수정)은 사용자 승인 후에만 실행한다.
+
 ## 개발 환경 규칙 (IDE 중립)
 
 - Cursor와 IntelliJ IDEA 어디서든 같은 프로젝트를 열고 수정할 수 있도록 표준 프로젝트 구조를 유지한다.
 - 특정 IDE에 종속된 설정/기능을 사용하지 않는다.
 - 코드 스타일은 `.editorconfig`를 기준으로 한다 (UTF-8, LF, 2칸 들여쓰기, 끝 개행). 포맷터/린터 도입 시 설정 파일을 저장소에 커밋해 두 IDE가 동일하게 적용하게 한다.
 - 모든 개발/빌드/테스트 명령은 `package.json` scripts로 정의해 터미널에서 실행 가능해야 한다. IDE 전용 Run Configuration에 의존하지 않는다.
-- Node 버전 등 실행 환경은 저장소 파일(`.nvmrc` 또는 `engines`)로 고정한다 (스택 확정 시 추가).
+- Node 버전 등 실행 환경은 `.nvmrc`와 `package.json`의 `engines`로 고정한다.
 - IDE 개인 설정/임시 파일(`.idea/`, `*.iml`, `.vscode/` 등)은 `.gitignore`로 제외한다. 단 `.cursor/rules/`는 공유 규칙이므로 커밋한다.
 - 비밀 값은 `.env*.local`에만 두고 커밋하지 않는다. 필요한 키 이름은 `.env.example`에 값 없이 기록한다.
 
